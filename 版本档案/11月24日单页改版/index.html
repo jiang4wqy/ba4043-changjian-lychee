@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="长健农业仙进奉荔枝礼盒。从开盒实拍、礼盒规格到广州发货时间，安排一份时令鲜礼。">
+  <title>长健农业 · 仙进奉荔枝礼盒</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+<a class="skip" href="#gift">跳到礼盒规格</a>
+<header class="mast">
+  <div class="wrap mast-row">
+    <a class="brand" href="#top" aria-label="长健农业，返回首页"><span class="seal" aria-hidden="true">荔</span><span>长健农业<small>CHANGJIAN AGRICULTURE</small></span></a>
+    <nav aria-label="主导航"><a href="#gift">礼盒</a><a href="#delivery">配送</a><a href="#orchard">果园</a><a href="#enquiry">咨询</a></nav>
+  </div>
+</header>
+<main>
+  <section id="home" class="hero">
+    <div class="hero-copy"><span class="origin">广州增城　·　仙进奉</span><h1>荔枝红时，<br>登门叙旧。</h1><p>从枝头，到相聚的桌上。<br>这一季，以一盒岭南鲜荔相赠。</p><div class="actions"><a class="button light" href="#gift">看礼盒规格 <span aria-hidden="true">↗</span></a><a class="plain-light" href="#delivery">查寄送时间 <span aria-hidden="true">→</span></a></div></div>
+    <figure class="hero-image"><img src="images/gift-scene.png" width="1536" height="1024" alt="家人在桌边递上一颗鲜荔，桌上放着荔枝礼盒；AI 生成的礼赠情境图"></figure>
+  </section>
+
+  <section id="gift" class="gift section wrap" aria-labelledby="gift-title">
+    <div class="section-top"><div><p class="overline">广州增城 · 鲜果礼盒</p><h2 id="gift-title">仙进奉礼盒</h2></div><p class="season-note">2027 年 7 月产季 · 课堂模拟</p></div>
+    <div class="gift-grid">
+      <div class="gallery">
+        <button type="button" class="image-frame" id="zoom" aria-label="放大当前包装实拍"><img id="photo" src="images/gift-inside.jpg" alt="开盒实拍：红色内托中，鲜荔分隔排列" width="1276" height="1702"><span>放大实拍 <span aria-hidden="true">＋</span></span></button>
+        <div class="gallery-bar"><span class="photo-label">包装实拍</span><div role="group" aria-label="选择实拍角度"><button type="button" data-picture="0" aria-pressed="true">盒内</button><button type="button" data-picture="1" aria-pressed="false">外盒</button><button type="button" data-picture="2" aria-pressed="false">细节</button></div></div>
+      </div>
+      <div class="spec">
+        <div class="spec-heading"><h3>两款礼盒</h3><span>商品价 · 运费另计</span></div>
+        <fieldset class="choices"><legend class="sr">选择礼盒规格</legend>
+          <label class="sku"><input type="radio" name="sku" value="雅礼装"><span class="sku-text"><b>雅礼装</b><small>果品净重 1.5 kg（3 斤）</small></span><span class="price"><small>¥</small>198</span></label>
+          <label class="sku"><input type="radio" name="sku" value="家宴装"><span class="sku-text"><b>家宴装</b><small>果品净重 2.5 kg（5 斤）</small></span><span class="price"><small>¥</small>298</span></label>
+        </fieldset>
+        <div class="spec-delivery"><div><span class="tiny">发货地</span><strong>广东 · 广州增城</strong></div><a class="line-link" href="#delivery">查配送 <span aria-hidden="true">→</span></a></div>
+        <a href="#enquiry" class="button wine" data-draft-source="gift">咨询礼盒 <span aria-hidden="true">↗</span></a>
+        <p class="fine">照片展示原项目实物包装。规格与价格为本次选盒情境设定。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="delivery" class="paper section"><div class="wrap route">
+    <div class="route-intro"><p class="overline">广州增城发货</p><h2>寄送安排</h2><p>鲜果运输时间自快递揽收起计。选收货地区，查看对应线路。</p><span class="season-note">产季线路参考 · 课堂模拟</span></div>
+    <div class="route-data"><label class="fieldname" for="region">收货地区</label><select id="region"><option value="" selected disabled>请选择收货地区</option><option value="futian">深圳市福田区</option><option value="delta">广州及珠三角其他主要城区</option><option value="express">省外生鲜专线城市</option><option value="mainland">其他内地可寄地区</option><option value="remote">偏远县镇、海岛及港澳台</option></select>
+      <div class="route-result" aria-live="polite" hidden><div><span class="tiny" id="lead-label"></span><h3 id="lead-time"></h3></div><p id="lead-detail"></p></div>
+      <details><summary>查看全部线路</summary><dl class="routes"><div><dt>广州及珠三角主要城区</dt><dd>当日或次日，当日达限早班</dd></div><div><dt>省外生鲜专线城市</dt><dd>1–2 天</dd></div><div><dt>其他内地可寄地区</dt><dd>2–3 天</dd></div><div><dt>偏远县镇、海岛及港澳台</dt><dd>按地址查询</dd></div></dl></details>
+    </div>
+  </div></section>
+
+  <section id="orchard" class="wrap section orchard"><div class="orchard-pair"><img src="images/lychee-branch.jpg" width="1004" height="1280" alt="项目实拍：树枝上成熟的红色荔枝" loading="lazy"><img src="images/orchard.jpg" width="960" height="1280" alt="项目实拍：绿树成片的果园环境" loading="lazy"></div>
+    <div><p class="overline">长健与果园</p><h2>来自岭南的<br>一味晚熟鲜荔</h2><p>仙进奉是广州增城的晚熟荔枝品种。果肉清甜，带淡淡蜜香。翻开礼盒前，先看它挂在枝头的模样。</p><span class="fine">枝头与园景均为项目实拍。</span></div>
+  </section>
+
+  <section id="occasions" class="paper section"><div class="wrap occasion"><div><p class="overline">礼赠场合</p><h2>这份荔礼，送给谁？</h2></div><div><div class="occasion-tabs" role="group" aria-label="选择礼赠场景"><button type="button" data-occasion="visit" aria-pressed="true">探亲访友</button><button type="button" data-occasion="thanks" aria-pressed="false">致谢相赠</button><button type="button" data-occasion="share" aria-pressed="false">家人分享</button></div><p id="occasion-detail" aria-live="polite">先看开盒实拍，再把收货日与登门日期排在一起。</p><a class="line-link" href="#enquiry" data-draft-source="occasion">带上这个问题去咨询 →</a></div></div></section>
+
+  <section id="enquiry" class="section wrap enquiry"><div><p class="overline">礼盒咨询</p><h2>送礼前，再问一句</h2><p>把礼盒、用途和收货安排写成一份咨询清单。</p>
+    <div class="faq"><details><summary>收到荔枝后怎么保存？</summary><p>及时检查果况，冷藏保存并尽早食用。以实际商品的保存说明为准。</p></details><details><summary>照片能判断净重和果数吗？</summary><p>包装实拍用于看盒型与摆放。课堂选盒请以规格栏的果品净重为准。</p></details><details><summary>在哪里确认实际购买渠道？</summary><p>原项目提及微信小程序和京东。正式商品入口、当期报价与供货情况可向长健农业电话咨询。</p></details></div>
+    <a class="tel" href="tel:13316022555">电话咨询　133 1602 2555</a>
+    </div><form id="draft"><label class="fieldname" for="draft-text">咨询内容</label><textarea id="draft-text" rows="4" required maxlength="400" placeholder="例如：想了解礼盒的可订日期和到货安排。"></textarea><p class="fine">本地课堂预览，仅在此设备查看或复制，不会发送给商家。</p><div class="actions"><button class="button wine" type="submit">预览清单</button><button class="line-link" id="copy" type="button">复制文字</button></div><output id="draft-status" aria-live="polite"></output></form>
+  </section>
+</main>
+<footer><div class="wrap foot"><div><strong>长健农业</strong><p>广州增城 · 仙进奉荔枝礼盒</p></div><a href="#top">返回顶部 ↑</a></div>
+<details class="wrap observe"><summary>课堂观察记录</summary><p>开启后仅在当前页面记录浏览操作和时间，不记录咨询文字或个人资料。刷新即清空。</p><div class="actions"><button type="button" id="observe-toggle">开始本次观察</button><button type="button" id="export" disabled>导出操作记录</button><span id="observe-status" role="status">未开启</span></div></details></footer>
+<dialog id="lightbox"><button type="button" id="close-photo" aria-label="关闭实拍大图">关闭 ×</button><img id="enlarged" alt=""></dialog>
+</body>
+</html>
