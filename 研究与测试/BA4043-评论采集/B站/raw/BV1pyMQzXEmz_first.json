@@ -1,0 +1,51 @@
+{
+  "platform": "B站",
+  "url": "https://www.bilibili.com/video/BV1pyMQzXEmz/",
+  "bvid": "BV1pyMQzXEmz",
+  "title": "荔枝品种这么多，最好吃的是？曾经拍卖到天价的挂绿到底什么味？!_哔哩哔哩_bilibili",
+  "retrieved_at": "2026-11-24T21:52:53+08:00",
+  "order_mode": "页面默认显示，按主评、其已展开回复、下一主评顺序",
+  "rows": [
+    {
+      "date": "2025-07-12 18:03",
+      "level": "top",
+      "order": 1,
+      "source_id": "",
+      "text": "2025年热门、高性价比、新品流量卡合集｜点我免费申请＞＞＞ \n①首月0元试用（但需充值激活可退）\n②有疑问找头部百万粉[用户]\n③快递员送货上门，记得接电话！\n④建议放在副卡槽专门上网",
+      "thread": "thread-1",
+      "archived_digest": "dfb5245975b9"
+    },
+    {
+      "date": "2025-07-12 18:58",
+      "level": "reply",
+      "order": 2,
+      "source_id": "",
+      "text": "有一条线的荔枝用指甲掐着荔枝上那条线再掰可以直接把壳掰成两半",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2025-07-13 00:24",
+      "level": "top",
+      "order": 3,
+      "source_id": "",
+      "text": "新鲜的荔枝是这样的",
+      "thread": "thread-3"
+    },
+    {
+      "date": "2025-07-13 00:36",
+      "level": "reply",
+      "order": 4,
+      "source_id": "",
+      "text": "北方人表示真没见过这么润的[大哭]",
+      "thread": "thread-3"
+    },
+    {
+      "date": "2025-07-13 08:17",
+      "level": "reply",
+      "order": 5,
+      "source_id": "",
+      "text": "冰种，我见过最好的也就冰带糯[藏狐]",
+      "thread": "thread-3"
+    }
+  ]
+}

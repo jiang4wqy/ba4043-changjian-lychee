@@ -57,41 +57,50 @@ function revealChapter(image, word) {
   }).catch(() => {}); // A newer navigation intentionally cancels the older reveal.
 }
 
-function openChapter(index, updateHistory = true) {
+function openChapter(target, updateHistory = true) {
   closeMenu();
   const initial = activeChapter < 0;
-  const chapter = chapters[index];
-  const heading = document.getElementById(chapter.getAttribute('aria-labelledby'));
-  if (index === activeChapter && !initial) {
+  const chapter = target.closest('[data-chapter]');
+  const index = chapters.indexOf(chapter);
+  const changed = index !== activeChapter;
+  const outgoingImage = changed ? chapterImage(chapters[activeChapter]) : null;
+  if (changed) {
+    chapters.forEach((section, i) => { section.hidden = i !== index; });
+    activeChapter = index;
+    if (chapter.id === 'gift' || chapter.id === 'enquiry') recordSiteEvent(chapter.id + '_view');
+    document.getElementById('chapter-count').textContent = `${String(index + 1).padStart(2, '0')} / ${String(chapters.length).padStart(2, '0')}`;
+    document.getElementById('chapter-name').textContent = chapter.dataset.chapter;
+    site.querySelectorAll('#main-nav a, .chapter-rail a').forEach(link => {
+      if (link.hash === `#${chapter.id}`) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+  }
+  const question = target.closest('details');
+  const heading = question ? question.querySelector('summary') : document.getElementById(chapter.getAttribute('aria-labelledby'));
+  if (question) {
+    question.open = true;
+    heading.scrollIntoView({ block: 'start', behavior: 'instant' });
+  } else {
     chapterMain.scrollTop = 0;
-    if (!site.inert) heading.focus({ preventScroll: true });
-    return;
   }
-  const outgoingImage = chapterImage(chapters[activeChapter]);
-  chapters.forEach((section, i) => { section.hidden = i !== index; });
-  activeChapter = index;
-  chapterMain.scrollTop = 0;
-  document.getElementById('chapter-count').textContent = `${String(index + 1).padStart(2, '0')} / ${String(chapters.length).padStart(2, '0')}`;
-  document.getElementById('chapter-name').textContent = chapter.dataset.chapter;
-  site.querySelectorAll('#main-nav a, .chapter-rail a').forEach(link => {
-    if (link.hash === `#${chapter.id}`) link.setAttribute('aria-current', 'page');
-    else link.removeAttribute('aria-current');
-  });
-  if (updateHistory && location.hash !== `#${chapter.id}`) history.pushState(null, '', `#${chapter.id}`);
-  if (!initial) {
-    if (!site.inert) heading.focus({ preventScroll: true });
-    revealChapter(outgoingImage, chapter.querySelector('.chapter-glyph').textContent);
-  }
+  if (updateHistory && location.hash !== `#${target.id}`) history.pushState(null, '', `#${target.id}`);
+  if ((!initial || question) && !site.inert) heading.focus({ preventScroll: true });
+  if (!initial && changed) revealChapter(outgoingImage, chapter.querySelector('.chapter-glyph').textContent);
 }
 
-function chapterFromHash() {
-  const index = chapters.findIndex(chapter => `#${chapter.id}` === location.hash);
-  return index < 0 ? 0 : index;
+function targetFromHash(hash) {
+  if (hash === '#top') return chapters[0];
+  const target = document.getElementById(hash.slice(1));
+  return target?.matches('[data-chapter], .faq-answer[id]') ? target : null;
+}
+
+function restoreChapter() {
+  openChapter(targetFromHash(location.hash) || chapters[0], false);
 }
 
 document.documentElement.classList.add('chapter-mode');
 chapterNavigation.hidden = false;
-openChapter(chapterFromHash(), false);
+restoreChapter();
 site.addEventListener('click', event => {
   const link = event.target.closest('a[href^="#"]');
   if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -100,13 +109,13 @@ site.addEventListener('click', event => {
     chapterMain.focus({ preventScroll: true });
     return;
   }
-  const index = link.hash === '#top' ? 0 : chapters.findIndex(chapter => `#${chapter.id}` === link.hash);
-  if (index < 0) return;
+  const target = targetFromHash(link.hash);
+  if (!target) return;
   event.preventDefault();
-  openChapter(index);
+  openChapter(target);
 });
-window.addEventListener('popstate', () => openChapter(chapterFromHash(), false));
-window.addEventListener('hashchange', () => openChapter(chapterFromHash(), false));
+window.addEventListener('popstate', restoreChapter);
+window.addEventListener('hashchange', restoreChapter);
 reducedMotion.addEventListener('change', () => {
   if (reducedMotion.matches) {
     cancelChapterReveal();

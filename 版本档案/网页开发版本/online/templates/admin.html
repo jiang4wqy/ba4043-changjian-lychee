@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>长健农业 · 课程咨询管理</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="admin-page">
+  <header class="header"><div class="container header-inner"><a class="brand" href="/">长健农业 · 咨询管理</a><a class="text-link" href="/#enquiry">查看网站 ↗</a></div></header>
+  <main class="container admin-main">
+    {% if login %}
+    <p class="eyebrow">COURSE PROJECT</p><h1>小组成员登录</h1>
+    <p>使用本机启动时设置的管理密码查看咨询记录。</p>
+    <form class="admin-login" method="post" action="/admin/login">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+      <label for="admin-password">管理密码</label><input id="admin-password" type="password" name="password" required autocomplete="current-password" maxlength="200">
+      {% if error %}<p class="form-feedback error" role="alert">{{ error }}</p>{% endif %}
+      <div class="form-actions"><button class="button" type="submit">登录查看 →</button></div>
+    </form>
+    {% else %}
+    <div class="admin-heading"><div><p class="eyebrow">ENQUIRY RECORDS</p><h1>收到的咨询</h1><p>共 {{ total }} 条 · 时间为北京时间。仅限课程项目小组查看。</p></div><form method="post" action="/admin/logout"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="text-link" type="submit">退出登录</button></form></div>
+    <div class="admin-records">
+      {% for row in records %}
+      <article class="admin-record"><div class="record-heading"><h2>{{ row['topic'] }}</h2><span>CJ-{{ '%06d'|format(row['id']) }}</span></div><p class="source-note">{{ row['local_time'] }} · 已同意保存咨询信息</p><dl class="info-list"><div><dt>称呼</dt><dd>{{ row['customer_name'] }}</dd></div><div><dt>{{ '手机' if row['contact_method'] == 'phone' else '邮箱' }}</dt><dd>{{ row['contact'] }}</dd></div><div><dt>咨询内容</dt><dd class="record-message">{{ row['message'] or '未填写补充说明' }}</dd></div></dl></article>
+      {% else %}<p class="empty-records">还没有咨询记录。到网站填写一条示例咨询，即可在这里查看。</p>{% endfor %}
+    </div>
+    <nav class="admin-pagination" aria-label="咨询记录分页">{% if page > 1 %}<a class="text-link" href="?page={{ page - 1 }}">← 上一页</a>{% endif %}<span>{{ page }} / {{ pages }}</span>{% if page < pages %}<a class="text-link" href="?page={{ page + 1 }}">下一页 →</a>{% endif %}</nav>
+    {% endif %}
+  </main>
+</body>
+</html>

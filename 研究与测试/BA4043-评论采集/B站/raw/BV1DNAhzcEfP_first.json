@@ -1,0 +1,34 @@
+{
+  "platform": "B站",
+  "url": "https://www.bilibili.com/video/BV1DNAhzcEfP/",
+  "bvid": "BV1DNAhzcEfP",
+  "title": "在深圳天价超市里花1200元只买了这几个东西！一盒水果就要1600！真的好吃吗？_哔哩哔哩_bilibili",
+  "retrieved_at": "2026-11-24T21:54:38+08:00",
+  "order_mode": "页面默认显示，按主评、其已展开回复、下一主评顺序",
+  "rows": [
+    {
+      "date": "2026-02-28 18:26",
+      "level": "top",
+      "order": 1,
+      "source_id": "",
+      "text": "彦祖来个赞吗[doge]\n[星星眼]日常打扫一台追觅T60Ultra就够了\n🐶：追觅T60 Ultra \n🍑：追觅T60 Ultra \n点赞过10w立马安排下一期[doge]",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2026-07-02 21:40",
+      "level": "reply",
+      "order": 2,
+      "source_id": "",
+      "text": "还以为超过10万送给我呢[绝区零_惊吓]",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2026-02-28 19:16",
+      "level": "top",
+      "order": 3,
+      "source_id": "",
+      "text": "这种应该是对应欧美物价得超市，换成美元是不是跟在美国购物差不多的价格了？估计这超市就是为了那些润到国外然后回国的少爷小姐准备的。",
+      "thread": "thread-3"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "platform": "B站",
+  "url": "https://www.bilibili.com/video/BV1zT4y1p7zd/",
+  "bvid": "BV1zT4y1p7zd",
+  "title": "山姆vs新荣记vs某回购网店的红美人盲测!哪家最能打？_哔哩哔哩_bilibili",
+  "retrieved_at": "2026-11-24T21:55:01+08:00",
+  "order_mode": "页面默认显示，按主评、其已展开回复、下一主评顺序",
+  "rows": [
+    {
+      "date": "2025-12-31 09:15",
+      "level": "top",
+      "order": 1,
+      "source_id": "",
+      "text": "橘子罢了",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2024-01-06 07:57",
+      "level": "top",
+      "order": 2,
+      "source_id": "",
+      "text": "我就纳闷……怎么性状都变了",
+      "thread": "thread-2"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "platform": "B站",
+  "url": "https://www.bilibili.com/video/BV1Es4y1i79A/",
+  "bvid": "BV1Es4y1i79A",
+  "title": "开箱！王师傅和小毛毛的荔枝_哔哩哔哩_bilibili",
+  "retrieved_at": "2026-11-24T21:46:26+08:00",
+  "order_mode": "页面默认显示，按主评、其已展开回复、下一主评顺序",
+  "rows": [
+    {
+      "date": "2023-05-28 15:08",
+      "level": "top",
+      "order": 1,
+      "source_id": "",
+      "text": "挺好的呀，加油",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2023-05-28 15:07",
+      "level": "top",
+      "order": 2,
+      "source_id": "167338901920",
+      "text": "录播哥是真爱啊[吃瓜]",
+      "thread": "thread-2"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "platform": "B站",
+  "url": "https://www.bilibili.com/video/BV1thT3zjEDk/",
+  "bvid": "BV1thT3zjEDk",
+  "title": "【荔枝品种-妃子笑和白糖罂】高州本地人教大家认识荔枝品种啦_哔哩哔哩_bilibili",
+  "retrieved_at": "2026-11-24T21:54:08+08:00",
+  "order_mode": "页面默认显示，按主评、其已展开回复、下一主评顺序",
+  "rows": [
+    {
+      "date": "2025-06-14 21:33",
+      "level": "top",
+      "order": 1,
+      "source_id": "264558472977",
+      "text": "我家的桂味正当时令，十分好吃，喜欢的朋友可以看我主页详情找我哦[呲牙]保证个个精品",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2025-06-15 13:30",
+      "level": "reply",
+      "order": 2,
+      "source_id": "",
+      "text": "回复 [用户] :白糖罂肉脆，纯甜，大核。桂味肉软硬适中，也可以说是滑，没有果肉渣，甜，荔枝香气浓郁，大核小核都有。",
+      "thread": "thread-1",
+      "archived_digest": "2a5e9d01b047"
+    },
+    {
+      "date": "2025-06-24 07:36",
+      "level": "top",
+      "order": 3,
+      "source_id": "266523181264",
+      "text": "糯米糍天下第一",
+      "thread": "thread-3"
+    },
+    {
+      "date": "2025-06-26 22:35",
+      "level": "reply",
+      "order": 4,
+      "source_id": "",
+      "text": "[doge]糯米糍忠实粉丝来了",
+      "thread": "thread-3"
+    }
+  ]
+}

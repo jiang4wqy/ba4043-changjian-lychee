@@ -123,37 +123,51 @@ figcaption { color: var(--muted); font-size: 12px; margin-top: 10px; }
 .journey h3 { font-size: 23px; margin-top: 12px; }
 .journey p { color: var(--muted); font-size: 13px; margin-top: 5px; }
 .faq-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 10%; }
-.faq-intro > p:not(.eyebrow) { margin-top: 14px; color: var(--muted); }
 .faq-intro .text-link { margin-top: 18px; }
 .faq { border-top: 1px solid var(--line); }
 .faq details { border-bottom: 1px solid var(--line); }
-.faq summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 66px; padding-block: 16px; cursor: pointer; list-style: none; font-size: 15px; }
+.faq summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 66px; padding: 16px 8px 16px 0; cursor: pointer; list-style: none; font-size: 15px; }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary span { font-size: 23px; transition: transform .2s; }
+.faq summary span { flex: none; width: 1em; text-align: center; font-size: 23px; line-height: 1; transition: transform .2s; }
+.faq summary:hover, .faq details[open] summary span { color: var(--red); }
 .faq details[open] summary span { transform: rotate(45deg); }
-.faq details p { margin-bottom: 22px; padding-right: 30px; color: var(--muted); font-size: 14px; }
+.faq-answer { display: grid; gap: 12px; padding: 0 0 24px; color: var(--muted); font-size: 14px; }
+.faq-answer p { max-width: 40em; }
+.faq-answer p strong { color: var(--green); }
+.faq-example strong { margin-right: .65em; }
+.faq-answer .source-link { justify-self: start; color: var(--green); }
+.faq-specs { width: 100%; border-collapse: collapse; color: var(--green); font-variant-numeric: tabular-nums; text-align: left; }
+.faq-specs caption { padding-bottom: 8px; color: var(--muted); font-size: 12px; text-align: left; }
+.faq-specs th, .faq-specs td { padding: 7px 0; font-weight: 400; }
+.faq-specs thead { background: var(--sage); color: var(--muted); font-size: 12px; }
+.faq-specs tr > :first-child { padding-left: 12px; }
+.faq-specs tr > :last-child { padding-right: 12px; text-align: right; }
+.faq-specs tbody tr { border-bottom: 1px solid var(--line); }
+.faq-specs tbody th, .faq-specs tbody td:last-child { font: 20px/1.65 var(--serif); }
+.faq-specs tbody td:last-child { color: var(--red); }
+.faq-routes { margin: 0; }
+.faq-routes > div { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1fr); gap: 12px; padding-block: 7px; border-bottom: 1px solid var(--line); }
+.faq-routes dt { color: var(--green); }
+.faq-routes dd { margin: 0; }
+.faq-routes output { display: block; color: var(--green); font-variant-numeric: tabular-nums; }
+.faq-example { border-inline-start: 2px solid var(--line); padding-inline-start: 12px; }
+.delivery-dates label { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 0; color: var(--muted); font-size: 13px; }
+.delivery-dates input { width: 10.5rem; max-width: 100%; min-width: 0; min-height: 44px; padding: 6px 8px; font: inherit; }
+@media (min-width: 801px) {
+  .chapter-mode .guide-section { overflow: clip; }
+  .chapter-mode .faq-intro { position: sticky; top: 24px; align-self: start; }
+}
 .enquiry-section { background: var(--sage); }
 .enquiry-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 8%; align-items: start; }
-.enquiry-copy > p { margin-top: 18px; color: var(--muted); }
-.channel-info { margin-top: 30px; padding-block: 22px; border-top: 1px solid #a7b9a7; border-bottom: 1px solid #a7b9a7; }
-.channel-info > p:nth-child(2) { margin-block: 5px; }
-.channel-info .text-link { margin-top: 10px; font-size: 12px; }
-.local-note { font-size: 12px; }
-.contact-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: center; margin-top: 30px; padding: 28px 32px; border: 1px solid var(--line); background: var(--paper); }
-.contact-copy { min-width: 0; }
-.contact-copy h3 { margin-top: 8px; font-size: 30px; }
-.contact-copy > p:not(.eyebrow) { margin-top: 12px; color: var(--muted); font-size: 14px; }
+.enquiry-copy > p:not(.eyebrow) { margin-top: 14px; color: var(--muted); }
 .contact-phone { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 12px; min-height: 48px; margin-top: 14px; font: 26px/1.5 var(--serif); }
 .contact-phone .small-label { font: 12px/1.9 "Microsoft YaHei", "PingFang SC", sans-serif; }
 .contact-phone:hover { color: var(--red); }
-.contact-wechat { max-width: 210px; text-align: center; }
-.contact-wechat a { display: block; width: 180px; margin-inline: auto; background: #fff; border: 1px solid var(--line); }
+.contact-wechat { width: 160px; max-width: 100%; margin-top: 18px; }
+.contact-wechat a { display: block; background: #fff; border: 1px solid var(--line); }
 .contact-wechat img { width: 100%; height: auto; }
 .contact-wechat figcaption { margin-top: 8px; font-size: 12px; }
-.contact-wechat figcaption span { display: block; margin-top: 3px; color: var(--muted); font-size: 11px; line-height: 1.7; }
 form { padding: 30px; border: 1px solid var(--line); background: var(--white); }
-.demo-note { margin-bottom: 24px; padding: 14px 16px; background: var(--paper); border-left: 2px solid var(--red); font-size: 13px; line-height: 1.9; }
-.demo-note strong { display: block; margin-bottom: 3px; color: var(--red); font-weight: 500; }
 fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .field { min-width: 0; }
@@ -164,11 +178,10 @@ input, select, textarea { display: block; width: 100%; min-height: 48px; padding
 textarea { resize: vertical; }
 input::placeholder, textarea::placeholder { color: #6d7972; font-size: 13px; }
 [aria-invalid="true"] { border-color: var(--red); }
-.field-help, .field-error { font-size: 12px; margin-top: 5px; }
-.field-help { color: var(--muted); }
+.field-error { font-size: 12px; margin-top: 5px; }
 .field-error { color: var(--red); }
 .form-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; margin-top: 22px; }
-.form-feedback { margin-top: 20px; padding: 14px 16px; border: 1px solid var(--green); background: var(--sage); font-size: 14px; }
+.form-feedback { margin-top: 20px; padding: 14px 16px; border: 1px solid var(--green); background: var(--sage); font-size: 14px; white-space: pre-line; overflow-wrap: anywhere; }
 .form-feedback.error { border-color: var(--red); color: var(--red); background: #f9eee8; }
 .footer { border-top: 1px solid var(--line); }
 .footer-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 22px; padding-block: 35px; }
@@ -181,7 +194,6 @@ input::placeholder, textarea::placeholder { color: #6d7972; font-size: 13px; }
 .dialog-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 18px; }
 .dialog-header h2 { font-size: 26px; }
 .photo-dialog > img { width: 100%; height: min(62svh, 600px); object-fit: contain; }
-.photo-dialog .source-note { margin-top: 14px; }
 
 /* Useful product and gifting detail, within the existing six chapters. */
 .hero-overview { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
@@ -205,21 +217,12 @@ input::placeholder, textarea::placeholder { color: #6d7972; font-size: 13px; }
 .gift-planner { display: grid; grid-template-columns: .85fr 1.15fr; gap: 6%; margin-top: 26px; padding: 24px; border: 1px solid var(--line); background: var(--white); }
 .planner-heading .eyebrow { margin-bottom: 6px; }
 .planner-heading h3 { font-size: 26px; }
-.planner-heading > p:last-child { margin-top: 8px; color: var(--muted); font-size: 13px; }
 .occasion-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
 .occasion-buttons button { padding: 8px 16px; min-height: 44px; border: 1px solid var(--line); color: var(--green); background: transparent; font-size: 13px; }
 .occasion-buttons button[aria-pressed="true"] { color: var(--white); background: var(--green); border-color: var(--green); }
 #occasion-result h4 { font-size: 20px; }
 #occasion-result p { color: var(--muted); margin-top: 4px; font-size: 13px; }
-.journey ul { padding-left: 18px; margin: 10px 0 0; color: var(--muted); font-size: 13px; }
 .journey .text-link { font-size: 12px; margin-top: 8px; }
-.care-note { display: flex; gap: 20px; margin-top: 24px; padding: 16px 20px; border: 1px solid var(--line); font-size: 13px; color: var(--muted); }
-.care-note > span { flex-shrink: 0; font: 16px/1.8 var(--serif); color: var(--red); }
-.enquiry-steps { list-style: none; margin: 24px 0 0; padding: 0; }
-.enquiry-steps li { display: flex; gap: 14px; margin-top: 16px; }
-.enquiry-steps li > span { color: var(--red); font: 14px/1.9 var(--serif); }
-.enquiry-steps strong { font-size: 14px; font-weight: 500; }
-.enquiry-steps p { color: var(--muted); font-size: 12px; margin-top: 4px; }
 .service-status { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
 #retry-connection { margin-bottom: 18px; }
 .consent-field { margin-top: 18px; }
@@ -327,12 +330,7 @@ input::placeholder, textarea::placeholder { color: #6d7972; font-size: 13px; }
   .journey li::after { display: none; }
   .journey h3 { font-size: 22px; }
   .faq-layout, .enquiry-layout { grid-template-columns: 1fr; gap: 30px; }
-  .enquiry-copy h3 br { display: none; }
-  .contact-card { grid-template-columns: 1fr; gap: 22px; padding: 24px; }
-  .contact-copy h3 { font-size: 27px; }
   .contact-phone { font-size: 24px; }
-  .contact-wechat { justify-self: center; }
-  .channel-info { margin-top: 22px; }
   .form-grid { gap: 20px; }
   .intro-brand { top: 33px; left: 30px; font-size: 16px; }
   .skip { top: 22px; right: 24px; }
@@ -351,7 +349,6 @@ input::placeholder, textarea::placeholder { color: #6d7972; font-size: 13px; }
   .gift-planner { padding: 18px; }
   .occasion-buttons button { padding-inline: 11px; }
   .journey { grid-template-columns: 1fr; }
-  .care-note { flex-direction: column; gap: 6px; }
   .admin-heading, .record-heading { align-items: flex-start; flex-direction: column; }
   .admin-main h1 { font-size: 30px; }
   .container { width: 88%; }
@@ -417,7 +414,6 @@ input::placeholder, textarea::placeholder { color: #6d7972; font-size: 13px; }
 .chapter-mode .other-fruit > img { height: 140px; }
 .chapter-mode .journey { margin-bottom: 30px; }
 .chapter-mode form { padding: 22px; }
-.chapter-mode .demo-note { padding: 10px 14px; margin-bottom: 18px; }
 .chapter-mode .form-grid { gap: 14px; }
 .chapter-mode textarea { height: 100px; }
 .chapter-mode .form-actions { margin-top: 18px; }

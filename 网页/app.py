@@ -1,21 +1,24 @@
 """Local coursework enquiry service. Run `python app.py --setup`, then `python app.py`."""
 import argparse
+import csv
 from datetime import timedelta
 from functools import wraps
 import getpass
 import hmac
+import io
 import os
 from pathlib import Path
 import re
 import secrets
 import sqlite3
 
-from flask import Flask, jsonify, redirect, render_template, request, send_from_directory, session, url_for
+from flask import Flask, Response, jsonify, redirect, render_template, request, send_from_directory, session, url_for
 from werkzeug.security import check_password_hash, generate_password_hash
 
 
 ROOT = Path(__file__).resolve().parent
 TOPICS = {"礼盒规格", "当季供应", "配送与购买渠道", "其他咨询"}
+EVENTS = {"page_view", "gift_view", "delivery_open", "date_change", "gallery_open", "enquiry_view"}
 
 
 def data_directory():
@@ -56,6 +59,10 @@ def create_app(test_config=None):
             contact TEXT NOT NULL,
             message TEXT NOT NULL,
             consent INTEGER NOT NULL CHECK (consent = 1)
+        )""")
+        db.execute("""CREATE TABLE IF NOT EXISTS daily_events (
+            day TEXT NOT NULL, event TEXT NOT NULL, total INTEGER NOT NULL,
+            PRIMARY KEY (day, event)
         )""")
 
     def csrf_token():
@@ -115,6 +122,33 @@ def create_app(test_config=None):
     def enquiry_session():
         return jsonify(mode="stored", csrf_token=csrf_token())
 
+    @app.post("/api/events")
+    def log_event():
+        payload = request.get_json(silent=True)
+        if request.headers.get("Sec-Fetch-Site") == "cross-site":
+            return "", 403
+        if not isinstance(payload, dict) or set(payload) != {"event"}:
+            return "", 400
+        event = payload["event"]
+        if not isinstance(event, str) or event not in EVENTS:
+            return "", 400
+        with sqlite3.connect(app.config["DATABASE"], timeout=5) as db:
+            db.execute("""INSERT INTO daily_events VALUES (date('now', '+8 hours'), ?, 1)
+                          ON CONFLICT(day, event) DO UPDATE SET total = total + 1""", (event,))
+        return "", 204
+
+    @app.get("/admin/traffic.csv")
+    @admin_required
+    def traffic_csv():
+        report = io.StringIO()
+        writer = csv.writer(report)
+        writer.writerow(("date_beijing", "event", "count"))
+        with sqlite3.connect(app.config["DATABASE"]) as db:
+            writer.writerows(db.execute("SELECT day, event, total FROM daily_events ORDER BY day, event"))
+        return Response(report.getvalue(), mimetype="text/csv", headers={
+            "Content-Disposition": 'attachment; filename="changjian-traffic.csv"'
+        })
+
     @app.post("/api/enquiries")
     def save_enquiry():
         if not csrf_valid(request.headers.get("X-CSRF-Token")):
@@ -141,13 +175,13 @@ def create_app(test_config=None):
         elif method == "phone" and not re.fullmatch(r"1[3-9][0-9]{9}", contact):
             errors["contact"] = "请输入有效的 11 位中国大陆手机号码。"
         elif method == "email" and not re.fullmatch(r"[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)*", contact):
-            errors["contact"] = "请输入有效邮箱，例如 name@example.com。"
+            errors["contact"] = "请输入有效的邮箱地址。"
         if len(contact) > 100:
             errors["contact"] = "联系方式不能超过 100 字。"
         if len(values["message"]) > 300:
             errors["message"] = "咨询内容不能超过 300 字。"
         if payload.get("consent") is not True:
-            errors["consent"] = "请确认同意将咨询信息保存给课程项目小组。"
+            errors["consent"] = "请确认同意保存联系方式和留言。"
         if errors:
             return jsonify(message="请检查标出的信息。", errors=errors), 422
         try:
@@ -160,7 +194,7 @@ def create_app(test_config=None):
         except sqlite3.Error:
             app.logger.error("Enquiry database write failed; no success response issued.")
             return jsonify(message="咨询暂未保存，请稍后再试。"), 503
-        return jsonify(reference=f"CJ-{record_id:06d}", message="咨询已保存，课程项目小组可查看这条记录。"), 201
+        return jsonify(reference=f"CJ-{record_id:06d}", message="咨询已保存。"), 201
 
     @app.errorhandler(413)
     def too_large(error):

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>我们在做什么 · 长健农业礼盒网站改版</title>
+<style>
+:root{--ink:#20362c;--green:#284b38;--paper:#faf8f2;--line:#d9d6c8;--muted:#58645a}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.65 "Microsoft YaHei","PingFang SC",sans-serif}main,header,footer{width:min(1070px,90%);margin:auto}
+header{display:flex;justify-content:space-between;gap:16px;padding:23px 0 16px;border-bottom:1px solid var(--line);font-size:.85rem;color:var(--muted)}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:7%;align-items:center;padding:42px 0 35px}
+h1,h2,h3{font-family:"Songti SC","STSong","SimSun",serif;color:var(--ink);margin:0;line-height:1.3}h1{font-size:clamp(2rem,3.9vw,3.2rem);line-height:1.26}.intro{font-size:1.03rem;max-width:41em;margin:18px 0}.hero img{width:100%;max-height:250px;object-fit:cover;border-radius:3px}.actions{display:flex;flex-wrap:wrap;gap:10px}.button{display:inline-block;padding:9px 19px;border:1px solid var(--green);text-decoration:none;font-weight:600;border-radius:3px}.primary{background:var(--green);color:#fff}.secondary{color:var(--green)}a{color:#225642;text-underline-offset:3px}a:focus-visible,summary:focus-visible{outline:3px solid #ae5f28;outline-offset:3px}
+.section{border-top:1px solid var(--line);padding:28px 0}h2{font-size:1.65rem;margin-bottom:15px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.step+.step{border-left:1px solid var(--line);padding-left:24px}h3{font-size:1.22rem}p{margin:9px 0}.step p,.quiet{color:var(--muted)}.step a{font-size:.9rem}.facts{background:#edf1e8;border-left:3px solid #47654c;padding:12px 17px;margin:20px 0 0}
+details{border-top:1px solid var(--line);padding:11px 0}summary{font-weight:600;cursor:pointer}details p{max-width:900px;color:var(--muted);margin:8px 0 2px}.resources{display:flex;gap:12px 25px;flex-wrap:wrap}footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padding:18px 0 26px}
+@media(max-width:700px){.hero{grid-template-columns:1fr;gap:18px;padding:24px 0}.hero img{max-height:165px}.steps{grid-template-columns:1fr;gap:15px}.step+.step{border-left:0;border-top:1px solid var(--line);padding:14px 0 0}.section{padding:20px 0}header{font-size:.75rem}h2{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<header><span>BA4043 · 第 11 组</span><span>2026 年 11 月 25 日 · 项目总览</span></header>
+<main>
+<div class="hero">
+ <div><h1>让买礼盒的人，<br>自己选对一盒。</h1>
+ <p class="intro">你们上次做了长健农业的礼盒展示网站。现在要回答一个问题：访客能否从“这盒看起来不错”，走到“这盒在预算内，也赶得上见面”？先像访客一样逛一遍，再看 PPT 讲解改版理由。</p>
+ <div class="actions"><a class="button primary" href="https://changjian.86.53.181.46.sslip.io/">打开上线网页</a><a class="button secondary" href="课堂展示.pptx">打开英文 PPT</a></div></div>
+ <img src="礼赠画册/礼盒内部实拍.jpg" alt="长健农业原项目实拍，打开后的礼盒中荔枝分格摆放">
+</div>
+<section class="section"><h2>把自己当成这位访客</h2>
+<p>现在是模拟产季的 <strong>7 月 15 日</strong>。你有 <strong>250 元商品预算</strong>，想在 <strong>7 月 18 日中午</strong>带一盒仙进奉去深圳福田看朋友。打开网页，找出合适的箱型、价格和净重，再判断来不来得及。运费另计。</p>
+<details><summary>看标准答案（主持人用）</summary><p>雅礼装 198 元，净重 1.5 kg。家宴装 298 元，超过预算。情境中 7 月 16 日下午从广州增城揽收，深圳福田预计 7 月 17 日到，能赶上 18 日中午的探访。箱价、规格和班次均为课堂模拟。</p></details>
+</section>
+<section class="section"><h2>这道题为什么值得做</h2><div class="steps">
+<div class="step"><h3>同学发现了问题</h3><p>7 份互评都提到价格或规格不够清楚。大家看得见开盒实拍，却还得另问一盒多少钱、有多重。</p><a href="研究与测试/BA4043-评论采集/小组互评与网页改版.md">查看互评依据</a></div>
+<div class="step"><h3>真实评论解释了原因</h3><p>三站各 20 条评论。25 条提到价格或分量，有人因为仙进奉贵而改买中小果。页面需要支持这种取舍。</p><a href="研究与测试/BA4043-用户需求分析/社区评论主题分布.png">查看研究图</a></div>
+<div class="step"><h3>试用才能检验效果</h3><p>目标是 10 位潜在送礼者中，至少 8 位在 3 分钟内独立选对，并说清配送依据。当前尚未招募和计分。</p><a href="研究与测试/BA4043-目标与衡量/选盒测试记录.xlsx">打开测试记录表</a></div>
+</div></section>
+<section class="section"><h2>老师的八个章节，分别做什么</h2>
+<details><summary>2.1 Listen · 找出访客缺什么信息</summary><p>对照 7 份互评、60 条公开评论和原站礼盒页。优先补同学实际找不到、公开讨论也会影响选择的信息。15 条试采已含在 60 条内。</p></details>
+<details><summary>2.2 Goals · 定义“改得有用”</summary><p>选 Serve。成功要同时满足选对箱型、说对箱价净重、按揽收日判断到货、独立在 180 秒内完成。在正式记录满 10 人后按至少 8 人成功判断。</p></details>
+<details><summary>2.3 Strategies · 比较两条改版路线</summary><p><strong>方案一，按问题快速查询。</strong>访客先看两款箱价净重，再查目的地和在途时间；需要规格表、路线信息和简短指引。<strong>方案二，按探亲、答谢等场景浏览。</strong>实拍与礼赠图更有代入感，但访客可能仍要翻页找价格。我们选方案一，保留场景作为补充。本轮通过邀请真实访客试用检验效果，未安排付费投放。</p></details>
+<details><summary>2.4 Target audience · 谁会用这个网站</summary><p>首要用户是要按预算、赶在指定探访日之前送出鲜果的中文访客。JD-12 提到准备带果篮探访朋友；另有评论明确问购买联系方式。高端是网站的视觉定位，样本没有提供用户收入数据。</p></details>
+<details><summary>2.5 Tools · 各种工具在项目里做什么</summary><p>Python 采集、清理和统计评论；实拍和 AI 礼赠图用于对应的产品与场景展示；HTML、CSS 和 JavaScript 制作页面；匿名事件计数辅助观察浏览路径；Excel 按真实试用作答评估目标。</p></details>
+<details><summary>2.6 Implement · 现场演示改了哪里</summary><p>打开原站归档和改版页作对照，然后演示礼盒规格、开盒实拍、广州配送范围及咨询。手机端用 PPT 内的实际窄屏渲染截图展示。六幕新版已于 11 月 25 日发布，手机和桌面截图均取自公开网址。</p><a href="研究与测试/改版前网站/index.html">查看改版前网站</a></details>
+<details><summary>2.7 Monitor · 收集什么才算真实结果</summary><p>新版上线、同一版题卡锁定后，请 10 名合格访客各做一次上述任务。记下用时、原话、是否获提示及判断依据。放弃和超时留在分母。网页事件次数单独查看，答对与否用测试表评分。</p></details>
+<details><summary>2.8 Tune · 看到结果后怎么修</summary><p>若多人错把 298 元的箱型选进预算，尝试增加预算筛选。若多人把下单日当成揽收日，把目前的配送说明排成三格日期图。若能选盒却找不到后续入口，把咨询按钮移到访客最后查看的位置。每次改动后，用同一评分规则比较相应错误数和完成率。</p></details>
+</section>
+<section class="section"><h2>什么时候用哪份材料</h2>
+<p><strong>11 月 27 日交 PPT，12 月 3 日第 11 组展示。</strong>先用 PPT 讲发现，再打开网页做一次现场演示。若展示前已开展试用，只报实际人数及统计截止日。</p>
+<p><strong>12 月 6 日 20:00 为内部测试截止；12 月 12 日交最终报告。</strong>使用已发布的同一版网页收集真实测试记录，保留线上截图和观察期。最终英文报告由组员依据这些材料撰写；课程另收代码数据 ZIP 和英文 AI 使用报告。</p>
+<div class="resources"><a href="报告/Final report template.docx">英文报告写作模板</a><a href="AI使用/AI use record.pdf">英文 AI 使用记录</a><a href="研究与测试/README.md">研究材料目录</a><a href="README.md">运行与打包说明</a></div>
+</section>
+</main><footer>项目资料中的 198 元、298 元和指定班次用于课堂选盒情境。实际观察结果保存在组员填写的测试表中。</footer>
+</body>
+</html>

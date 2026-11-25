@@ -1,0 +1,34 @@
+{
+  "platform": "B站",
+  "url": "https://www.bilibili.com/video/BV1EcQ1YhEfB/",
+  "bvid": "BV1EcQ1YhEfB",
+  "title": "拼多多水果踩雷无数？这份避坑指南请收好！_哔哩哔哩_bilibili",
+  "retrieved_at": "2026-11-24T21:55:18+08:00",
+  "order_mode": "页面默认显示，按主评、其已展开回复、下一主评顺序",
+  "rows": [
+    {
+      "date": "2025-03-15 11:06",
+      "level": "top",
+      "order": 1,
+      "source_id": "",
+      "text": "还有哪些没有提到的避坑小技巧呢？欢迎评论补充～去年12月的录屏，随机挑选的一个店铺，不是广告，现在也不是脐橙的季节，不许买！",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2025-03-15 11:22",
+      "level": "reply",
+      "order": 2,
+      "source_id": "",
+      "text": "现在伦晚可以买吗？",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2025-03-17 23:12",
+      "level": "top",
+      "order": 3,
+      "source_id": "",
+      "text": "看追评，好评返现不管追评",
+      "thread": "thread-3"
+    }
+  ]
+}

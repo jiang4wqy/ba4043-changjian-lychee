@@ -1,0 +1,42 @@
+{
+  "platform": "B站",
+  "url": "https://www.bilibili.com/video/BV1mB6GBjE5j/",
+  "bvid": "BV1mB6GBjE5j",
+  "title": "真心劝大家.现在的海运车厘子不要买了！_哔哩哔哩_bilibili",
+  "retrieved_at": "2026-11-24T21:54:22+08:00",
+  "order_mode": "页面默认显示，按主评、其已展开回复、下一主评顺序",
+  "rows": [
+    {
+      "date": "2026-01-27 22:43",
+      "level": "top",
+      "order": 1,
+      "source_id": "",
+      "text": "如果对水果感兴趣，可以V：A19948688（水果先生）感谢大家的支持与厚爱[打call][大笑]",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2026-01-27 23:22",
+      "level": "top",
+      "order": 2,
+      "source_id": "",
+      "text": "那问题来了 变质变味为什么还在卖 不怕投诉退货吗[doge]",
+      "thread": "thread-2"
+    },
+    {
+      "date": "2026-01-27 23:31",
+      "level": "reply",
+      "order": 3,
+      "source_id": "",
+      "text": "很多人吃不出来[星星眼]",
+      "thread": "thread-2"
+    },
+    {
+      "date": "2026-01-28 03:48",
+      "level": "reply",
+      "order": 4,
+      "source_id": "",
+      "text": "很多商家就赌你不退赔，反正都变味坏了。而且有各种话术少退赔。",
+      "thread": "thread-2"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>长健农业 · 三种视觉与转场方向</title>
+  <link rel="stylesheet" href="options.css">
+  <script src="options.js" defer></script>
+</head>
+<body>
+  <header class="review-bar">
+    <div class="review-title"><strong>长健农业 / 设计选样</strong><span>每种两幕，可点击查看转场</span></div>
+    <nav class="option-nav" aria-label="选择视觉样稿">
+      <button type="button" data-option="a" aria-pressed="true"><b>A</b> 荔影新国风</button>
+      <button type="button" data-option="b" aria-pressed="false"><b>B</b> 山野沉浸影像</button>
+      <button type="button" data-option="c" aria-pressed="false"><b>C</b> 青绿当代画册</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="stage concept-a" id="stage">
+      <header class="brand-row">
+        <a class="brand" href="#a-home"><span class="brand-symbol" aria-hidden="true">荔</span><span>长健农业<small>CHANGJIAN AGRICULTURE</small></span></a>
+        <nav class="chapter-nav" aria-label="样稿章节"><a href="#a-home" data-scene="home" aria-current="page">01 / 荔香</a><a href="#a-gift" data-scene="gift">02 / 荔礼</a></nav>
+      </header>
+
+      <section class="scene a-home" data-option="a" data-scene="home" aria-labelledby="a-home-title">
+        <svg class="leaf-drawing" viewBox="0 0 600 580" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M-40 38C143 86 220 172 399 416M99 105C172 67 225 84 268 102M192 184C274 142 319 150 366 183M259 265C218 293 183 347 162 405M319 333C393 304 465 321 511 347"/><path d="M94 104C133 24 234 42 268 102C188 120 133 115 94 104ZM189 182C223 107 324 107 367 183C281 206 223 200 189 182ZM261 264C294 340 239 411 160 411C175 331 210 281 261 264ZM318 332C382 261 474 272 513 348C434 367 370 364 318 332Z"/></g></svg>
+        <span class="background-word" aria-hidden="true">荔</span>
+        <div class="copy">
+          <p class="kicker"><span></span> 鲜果成礼 · 心意相赠</p>
+          <h1 id="a-home-title" tabindex="-1"><span>一盒荔香，</span><span>赠予所念。</span></h1>
+          <p class="product-name">长健农业 · 仙进奉荔枝礼盒</p>
+          <p class="body-copy">把一份时令鲜果，<br>送给心上牵挂的人。</p>
+          <a class="action" href="#a-gift">展开这份心意 <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="visual">
+          <span class="vertical-note">荔香有时　心意无尽</span>
+          <a class="photo circle-photo" href="#a-gift" aria-label="从荔枝实拍展开礼盒一幕"><img src="assets/lychee-branch.jpg" alt="绿叶间的一簇红色荔枝" width="1004" height="1280"></a>
+          <span class="little-seal" aria-hidden="true">荔<br>香</span>
+          <p class="photo-caption">一味夏日鲜果 / 素材实拍</p>
+        </div>
+        <p class="scene-foot">亲友相赠 · 家人分享<span>点开画中鲜果，见一盒心意</span></p>
+      </section>
+
+      <section class="scene a-gift" data-option="a" data-scene="gift" aria-labelledby="a-gift-title" hidden>
+        <span class="background-word" aria-hidden="true">礼</span>
+        <div class="copy">
+          <p class="kicker"><span></span> 以荔为礼 · 见礼如面</p>
+          <h2 id="a-gift-title" tabindex="-1"><span>鲜果有时，</span><span>心意有归。</span></h2>
+          <p class="body-copy">探亲访友，致谢相赠。<br>心意，藏在一盒鲜果里。</p>
+          <p class="small-note">礼盒实物先看清，规格与寄送先确认。</p>
+          <a class="action" href="#a-home">回看枝头荔香 <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="visual">
+          <span class="vertical-note">以荔寄情　赠予所念</span>
+          <a class="photo gift-photo" href="#a-home" aria-label="回到荔香一幕"><img src="assets/gift-box.jpg" alt="绿色礼盒、红色提手与荔枝实物" width="960" height="1280"></a>
+          <span class="little-seal" aria-hidden="true">荔<br>礼</span>
+          <p class="photo-caption">礼盒与鲜果 / 素材实拍</p>
+        </div>
+        <p class="scene-foot">拜访亲友 · 表达感谢<span>从枝头一味，到掌中一礼</span></p>
+      </section>
+
+      <section class="scene b-home" data-option="b" data-scene="home" aria-labelledby="b-home-title" hidden>
+        <div class="photo full-photo"><img src="assets/lychee-branch.jpg" alt="绿叶与红色荔枝的枝头实拍" width="1004" height="1280"></div>
+        <div class="shade" aria-hidden="true"></div>
+        <div class="copy">
+          <p class="kicker">长健农业 · 仙进奉荔枝礼盒</p>
+          <h1 id="b-home-title" tabindex="-1"><span>一盒荔香，</span><span>赠予所念。</span></h1>
+          <p class="body-copy">把一份时令鲜果，送给心上牵挂的人。</p>
+          <a class="action" href="#b-gift">走近这份荔礼 <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="image-index" aria-hidden="true"><span>THE LYCHEE</span><b>01</b><span>枝头荔香</span></div>
+        <p class="scene-foot">鲜果成礼 · 心意相赠<span>LYCHEE / A GIFT TO SHARE</span></p>
+      </section>
+
+      <section class="scene b-gift" data-option="b" data-scene="gift" aria-labelledby="b-gift-title" hidden>
+        <div class="copy">
+          <p class="kicker">02 / THE GIFT</p>
+          <h2 id="b-gift-title" tabindex="-1"><span>以荔寄情，</span><span>见礼如面。</span></h2>
+          <p class="body-copy">探亲访友，致谢相赠。<br>心意，藏在一盒鲜果里。</p>
+          <p class="small-note">礼盒实物先看清，规格与寄送先确认。</p>
+          <a class="action" href="#b-home">回看枝头荔香 <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="visual"><div class="photo portrait-photo"><img src="assets/gift-detail.jpg" alt="礼盒近景中的荔枝、绿叶与包装" width="960" height="1280"></div><p class="photo-caption">心意，藏在细节里 / 素材实拍</p></div>
+        <p class="scene-foot">亲友相赠 · 家人分享<span>从鲜果的来处，到心意的去处</span></p>
+      </section>
+
+      <section class="scene c-home" data-option="c" data-scene="home" aria-labelledby="c-home-title" hidden>
+        <p class="edition">CHANGJIAN / LYCHEE GIFT COLLECTION</p>
+        <div class="editorial-title">
+          <h1 id="c-home-title" tabindex="-1">一盒<span class="visually-hidden">荔香，赠予所念。</span></h1>
+          <a class="photo inset-photo" href="#c-gift" aria-label="展开礼盒画册"><img src="assets/lychee-branch.jpg" alt="绿叶间的荔枝实拍" width="1004" height="1280"><span aria-hidden="true">EXPLORE ↗</span></a>
+          <span class="title-end" aria-hidden="true">荔香。</span>
+        </div>
+        <div class="editorial-bottom">
+          <div><h2 class="editorial-subtitle">赠予所念。</h2><p class="product-name">长健农业 · 仙进奉荔枝礼盒</p></div>
+          <div class="copy"><p class="body-copy">把一份时令鲜果，<br>送给心上牵挂的人。</p><a class="action" href="#c-gift">打开荔礼画册 <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <p class="scene-foot">鲜果成礼 · 心意相赠<span>01 / LYCHEE</span></p>
+      </section>
+
+      <section class="scene c-gift" data-option="c" data-scene="gift" aria-labelledby="c-gift-title" hidden>
+        <p class="edition">CHANGJIAN / A GIFT TO SHARE</p>
+        <div class="editorial-title">
+          <h2 id="c-gift-title" tabindex="-1">以荔<span class="visually-hidden">为礼，见礼如面。</span></h2>
+          <a class="photo inset-photo" href="#c-home" aria-label="回到荔香画册"><img src="assets/gift-box.jpg" alt="绿色礼盒与鲜果实拍" width="960" height="1280"><span aria-hidden="true">RETURN ↗</span></a>
+          <span class="title-end" aria-hidden="true">为礼。</span>
+        </div>
+        <div class="editorial-bottom">
+          <div><h3 class="editorial-subtitle">见礼如面。</h3><p class="product-name">拜访亲友 / 表达感谢 / 家人分享</p></div>
+          <div class="copy"><p class="body-copy">礼盒实物先看清，<br>规格与寄送先确认。</p><a class="action" href="#c-home">回看枝头荔香 <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <p class="scene-foot">心意，藏在一盒鲜果里<span>02 / GIFT</span></p>
+      </section>
+    </div>
+
+    <aside class="design-note" aria-labelledby="note-title">
+      <div><p class="note-label">当前方向 <span id="option-letter">A</span></p><h2 id="note-title">荔影新国风</h2><p id="note-description">浅青底色、枝叶线描、错位宋体与朱红小印。鲜果像画中的一扇圆窗，点击后从圆窗展开到礼盒一幕。</p></div>
+      <div><p class="note-label">体验方式</p><p>点击画面中的文字按钮或顶部“荔香 / 荔礼”。三个方案均为两幕视觉样稿；这里不收集信息，也不代表商品已开放销售。</p><p class="reference-links">转场参考：<a id="reference-link" href="https://tympanus.net/codrops/2023/03/14/fullscreen-clip-animation/" target="_blank" rel="noreferrer">Codrops / 形状裁切</a></p></div>
+    </aside>
+    <noscript><p class="no-js">此样稿需要 JavaScript 才能比较三个方向及播放转场。</p></noscript>
+  </main>
+  <footer class="review-footer">使用现有素材制作 · 原创 HTML / CSS / JavaScript · 选择方向后，再应用于六幕网站</footer>
+</body>
+</html>

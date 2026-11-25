@@ -1,0 +1,26 @@
+{
+  "platform": "B站",
+  "url": "https://www.bilibili.com/video/BV118T8zfEqE/",
+  "bvid": "BV118T8zfEqE",
+  "title": "我心目中的荔枝美味程度排行榜！各种荔枝上市时间，如何保存荔枝…一次过分享给你！_哔哩哔哩_bilibili",
+  "retrieved_at": "2026-11-24T21:46:35+08:00",
+  "order_mode": "页面默认显示，按主评、其已展开回复、下一主评顺序",
+  "rows": [
+    {
+      "date": "2025-06-14 09:48",
+      "level": "top",
+      "order": 1,
+      "source_id": "",
+      "text": "我家也种了桂味，有朋友要吃的嘛？",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2025-06-09 17:39",
+      "level": "top",
+      "order": 2,
+      "source_id": "",
+      "text": "猫哥、过多个星期黎中山南朗摘！带你自家树上食桂味",
+      "thread": "thread-2"
+    }
+  ]
+}

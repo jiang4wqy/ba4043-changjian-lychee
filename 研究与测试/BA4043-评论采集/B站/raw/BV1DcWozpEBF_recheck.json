@@ -1,0 +1,34 @@
+{
+  "platform": "B站",
+  "url": "https://www.bilibili.com/video/BV1DcWozpEBF/",
+  "bvid": "BV1DcWozpEBF",
+  "title": "网购水果为什么容易翻车？_哔哩哔哩_bilibili",
+  "retrieved_at": "2026-11-24T21:49:07+08:00",
+  "order_mode": "页面默认显示，按主评、其已展开回复、下一主评顺序",
+  "rows": [
+    {
+      "date": "2025-10-21 22:46",
+      "level": "top",
+      "order": 1,
+      "source_id": "",
+      "text": "上闲鱼搜【省钱神券】 咖啡奶茶4.9元，还能0元抽霸王餐！",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2025-10-22 19:16",
+      "level": "reply",
+      "order": 2,
+      "source_id": "",
+      "text": "[给心心]懂了，买不需要二次催熟的水果就行。",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2025-10-22 11:11",
+      "level": "top",
+      "order": 3,
+      "source_id": "",
+      "text": "我只买最便宜的其实也很少翻车[doge_金箍]很多新店卖一阵特别便宜的就下架了，或者涨价。看季节哪种便宜吃什么，不是广，图片上的价格现在都没了",
+      "thread": "thread-3"
+    }
+  ]
+}

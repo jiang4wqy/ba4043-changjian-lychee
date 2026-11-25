@@ -1,0 +1,34 @@
+{
+  "platform": "B站",
+  "url": "https://www.bilibili.com/video/BV1JnrpBYECu/",
+  "bvid": "BV1JnrpBYECu",
+  "title": "一个月都不坏的车厘子，是打防腐剂了吗？_哔哩哔哩_bilibili",
+  "retrieved_at": "2026-11-24T21:54:50+08:00",
+  "order_mode": "页面默认显示，按主评、其已展开回复、下一主评顺序",
+  "rows": [
+    {
+      "date": "2026-01-15 22:20",
+      "level": "top",
+      "order": 1,
+      "source_id": "",
+      "text": "所以车厘子和樱桃是不是一个东西啊",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2026-01-15 22:25",
+      "level": "reply",
+      "order": 2,
+      "source_id": "",
+      "text": "“车厘子”中文学名：欧洲甜樱桃，普遍皮厚个大偏甜；本土樱桃中文学名“樱桃”，普遍皮薄个小偏酸。同属不同种，不一样",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2026-02-04 13:26",
+      "level": "top",
+      "order": 3,
+      "source_id": "",
+      "text": "帮你们看了一下价格",
+      "thread": "thread-3"
+    }
+  ]
+}

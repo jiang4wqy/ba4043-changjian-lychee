@@ -1,0 +1,34 @@
+{
+  "platform": "B站",
+  "url": "https://www.bilibili.com/video/BV1FZ4y1v7Z4/",
+  "bvid": "BV1FZ4y1v7Z4",
+  "title": "荔枝味道排名：桂味地位不保，冰荔名过其实，仙进奉无缘天下第一_哔哩哔哩_bilibili",
+  "retrieved_at": "2026-11-24T21:45:00+08:00",
+  "order_mode": "页面默认显示，按主评、其已展开回复、下一主评顺序",
+  "rows": [
+    {
+      "date": "2023-06-23 22:17",
+      "level": "top",
+      "order": 1,
+      "source_id": "171409129200",
+      "text": "找园主买仙进奉荔枝，注明B站\nbingguo0703",
+      "thread": "thread-1"
+    },
+    {
+      "date": "2022-07-14 16:20",
+      "level": "top",
+      "order": 2,
+      "source_id": "120797727968",
+      "text": "不接受排名，桂味在我心里永远第一",
+      "thread": "thread-2"
+    },
+    {
+      "date": "2022-07-17 09:06",
+      "level": "reply",
+      "order": 3,
+      "source_id": "",
+      "text": "桂味排名是第一",
+      "thread": "thread-2"
+    }
+  ]
+}
