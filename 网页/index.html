@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
   <script src="chapters.js" defer></script>
+  <script src="assets/web/gift-estimate-engine.js" defer></script>
+  <script src="assets/web/gift-estimator.js" defer></script>
 </head>
 <body id="top">
   <div id="site">
@@ -102,10 +104,56 @@
                 <div><dt>家宴装</dt><dd>果品净重 2.5 kg（5 斤） · <strong>¥298 / 盒</strong></dd></div>
                 <div><dt>配送示例</dt><dd>广州增城寄往深圳福田，按揽收后次日送达估算。<br><a class="source-link" href="#delivery">估算送达日期 <span aria-hidden="true">→</span></a></dd></div>
               </dl>
-              <p class="source-note">鲜果净重不含包装。运费按收货地另计。</p>
+              <p class="source-note">鲜果净重不含包装。上列为单盒商品价，寄送费用另计。</p>
+              <a class="text-link" href="#gift-estimator">按斤数和含运预算选礼盒 <span aria-hidden="true">→</span></a><br>
               <a class="button" href="#enquiry">联系长健确认现货与报价 <span aria-hidden="true">→</span></a>
             </div>
           </div>
+          <section id="gift-estimator" class="gift-estimator" data-chapter-target aria-labelledby="estimate-heading">
+            <div class="estimate-intro">
+              <div><p class="small-label">2027 年课堂模拟 · 广州增城发货</p>
+                <h3 id="estimate-heading" tabindex="-1">按预算选礼盒</h3>
+                <p>输入收货地、最低斤数和含运总预算，比较不同礼盒组合的预计到手价。</p>
+              </div>
+              <img src="assets/web/gift-box.jpg" width="160" height="100" alt="仙进奉礼盒和盒内鲜果" loading="lazy">
+            </div>
+            <div id="estimate-interface" class="estimate-layout" hidden>
+              <form id="estimate-form" aria-label="礼盒寄送条件">
+                <div class="field">
+                  <label for="estimate-address">收货地区</label>
+                  <input id="estimate-address" name="address" type="text" list="estimate-regions" placeholder="省、市、区县" required maxlength="120" autocomplete="off">
+                  <datalist id="estimate-regions"></datalist>
+                </div>
+                <div class="estimate-numbers">
+                  <div class="field"><label for="estimate-jin">最低鲜果净重（斤）</label>
+                    <input id="estimate-jin" name="jin" type="number" min="0.01" step="any" inputmode="decimal" placeholder="例如 3" required>
+                  </div>
+                  <div class="field"><label for="estimate-budget">含运总预算（元）</label>
+                    <input id="estimate-budget" name="budget" type="number" min="0" step="0.01" inputmode="decimal" placeholder="例如 250" required>
+                  </div>
+                </div>
+                <div class="estimate-actions"><button class="button" type="submit">计算礼盒方案 <span aria-hidden="true">→</span></button>
+                  <button class="text-link" id="estimate-example" type="button">试算福田示例</button>
+                </div>
+              </form>
+              <div id="estimate-result" class="estimate-output" aria-live="polite" aria-atomic="true">
+                <h4 id="estimate-result-title">您的礼盒方案</h4>
+                <p id="estimate-total" class="estimate-total" hidden></p>
+                <p id="estimate-message">填写寄送条件后，可查看礼盒组合与费用明细。</p>
+                <div id="estimate-detail" hidden>
+                  <ul id="estimate-items" class="estimate-items"></ul>
+                  <dl id="estimate-breakdown" class="estimate-costs"></dl>
+                  <p id="estimate-weights" class="source-note"></p>
+                </div>
+              </div>
+            </div>
+            <noscript><p>启用 JavaScript 后即可计算含运总额，也可<a class="source-link" href="#enquiry">联系长健确认报价 →</a>。</p></noscript>
+            <details class="estimate-source"><summary>估价依据与顺丰参考价目表</summary>
+              <p>雅礼装每盒 3 斤、198 元，家宴装每盒 5 斤、298 元。每盒单独寄送，雅礼装和家宴装的计费重量分别暂按 2.5 kg 和 3 kg，寄递包材分别按 6 元和 8 元估算。</p>
+              <p>广州、深圳示例按 800 km 以内计，每件保鲜费 3 元。其他可估线路先按每件 3–5 元给出区间。图中参考价未注明有效期，实际费用以装箱称重和承运方核价为准。</p>
+              <a href="assets/web/sf-lychee-rate-card.jpg" target="_blank" rel="noopener"><img src="assets/web/sf-lychee-rate-card.jpg" alt="顺丰荔枝寄递价目表，含分地区运费、包材和保鲜服务。打开可看原图。" loading="lazy"></a>
+            </details>
+          </section>
           <div class="gift-planner" id="gift-planner">
             <div class="planner-heading"><p class="eyebrow">FOR SOMEONE IN MIND</p><h3>这份荔礼，送给谁？</h3></div>
             <div class="planner-body">
@@ -159,7 +207,8 @@
                       <tr><th scope="row">家宴装</th><td>2.5 kg（5 斤）</td><td>¥298</td></tr>
                     </tbody>
                   </table>
-                  <p class="source-note">运费按收货地另计。</p>
+                  <p class="source-note">上表为礼盒商品价。估算含运总额时，还要计入运费、包材和保鲜服务。</p>
+                  <a class="source-link" href="#gift-estimator">按含运预算选礼盒 <span aria-hidden="true">→</span></a>
                 </div>
               </details>
               <details>
@@ -175,6 +224,7 @@
                     <div><dt>其他内地主要城区</dt><dd>预计 1–2 天<output id="arrival-window" for="pickup-date" aria-label="其他内地主要城区预计送达日期范围"></output></dd></div>
                     <div><dt>偏远县镇、海岛及港澳台</dt><dd><a class="source-link" href="https://www.sf-express.com/chn/sc/price-query" target="_blank" rel="noopener">按地址查顺丰时效 <span aria-hidden="true">↗</span></a></dd></div>
                   </dl>
+                  <a class="source-link" href="#gift-estimator">估算礼盒与寄送总价 <span aria-hidden="true">→</span></a>
                   <a class="source-link" href="#enquiry">联系长健确认运费与发货日 <span aria-hidden="true">→</span></a>
                 </div>
               </details>

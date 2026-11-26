@@ -76,22 +76,26 @@ function openChapter(target, updateHistory = true) {
     });
   }
   const question = target.closest('details');
-  const heading = question ? question.querySelector('summary') : document.getElementById(chapter.getAttribute('aria-labelledby'));
+  const subsection = target.hasAttribute('data-chapter-target');
+  const heading = question ? question.querySelector('summary') :
+    document.getElementById((subsection ? target : chapter).getAttribute('aria-labelledby'));
   if (question) {
     question.open = true;
     heading.scrollIntoView({ block: 'start', behavior: 'instant' });
+  } else if (subsection) {
+    target.scrollIntoView({ block: 'start', behavior: 'instant' });
   } else {
     chapterMain.scrollTop = 0;
   }
   if (updateHistory && location.hash !== `#${target.id}`) history.pushState(null, '', `#${target.id}`);
-  if ((!initial || question) && !site.inert) heading.focus({ preventScroll: true });
+  if ((!initial || question || subsection) && !site.inert) heading.focus({ preventScroll: true });
   if (!initial && changed) revealChapter(outgoingImage, chapter.querySelector('.chapter-glyph').textContent);
 }
 
 function targetFromHash(hash) {
   if (hash === '#top') return chapters[0];
   const target = document.getElementById(hash.slice(1));
-  return target?.matches('[data-chapter], .faq-answer[id]') ? target : null;
+  return target?.matches('[data-chapter], [data-chapter-target], .faq-answer[id]') ? target : null;
 }
 
 function restoreChapter() {
