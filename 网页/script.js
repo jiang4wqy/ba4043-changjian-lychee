@@ -154,7 +154,7 @@ if (typeof photoDialog.showModal === 'function') {
 const occasions = {
   visit: { title: '见面有礼，一起尝鲜。', detail: '红色提手方便携带，见面便可开盒分享。', topic: '礼盒规格', draft: '想挑一盒荔枝探访亲友，请问当季有哪些礼盒可订？' },
   thanks: { title: '以一盒荔香，表达感谢。', detail: '绿盒红提手，一份夏日时令礼。', topic: '礼盒规格', draft: '想订礼盒送人，请问当季价格和包装？' },
-  share: { title: '一家围坐，共尝时令。', detail: '家宴装盛放五斤鲜荔，席间与亲友共尝。', topic: '当季供应', draft: '想订家宴装与家人分享，请问有现货吗？' }
+  share: { title: '一家围坐，共尝时令。', detail: '带一盒鲜荔上桌，席间与亲友共尝。', topic: '当季供应', draft: '想订家宴装与家人分享，请问有现货吗？' }
 };
 document.querySelector('.occasion-buttons').hidden = false;
 document.querySelectorAll('[data-occasion]').forEach(button => button.addEventListener('click', () => {
@@ -212,7 +212,7 @@ let csrfToken = '';
 let submitting = false;
 
 function resetSubmitButton() {
-  submitButton.textContent = enquiryMode === 'draft' ? '复制咨询内容' : '提交咨询 →';
+  submitButton.textContent = enquiryMode === 'draft' ? '复制咨询内容' : '保存留言 →';
   submitButton.disabled = false;
 }
 
@@ -241,7 +241,9 @@ async function connectService() {
     });
     document.getElementById('consent-field').hidden = !stored;
     consent.disabled = !stored;
-    serviceStatus.textContent = stored ? '在线留言' : '微信咨询';
+    serviceStatus.textContent = stored
+      ? '留言保存到课程网站，由本站管理员查看。现货、报价和发货安排请直接联系长健。'
+      : '复制咨询内容后，请自行通过微信发送给长健。';
     resetSubmitButton();
     fields.disabled = false;
   } catch {
@@ -301,9 +303,9 @@ form.addEventListener('submit', async event => {
     const draft = ['礼盒咨询 · ' + topic.value, messageInput.value.trim()].filter(Boolean).join('\n');
     try {
       await navigator.clipboard.writeText(draft);
-      feedback.textContent = '已复制，可粘贴到微信发送。';
+      feedback.textContent = '已复制。请打开微信，粘贴并发送给长健。';
     } catch {
-      feedback.textContent = '可选中下方文字复制到微信\n' + draft;
+      feedback.textContent = '请复制下方文字，再通过微信发送给长健：\n' + draft;
     }
     feedback.scrollIntoView({ block: 'nearest', behavior: 'auto' });
     return;
@@ -313,7 +315,7 @@ form.addEventListener('submit', async event => {
   fields.disabled = true;
   form.setAttribute('aria-busy', 'true');
   submitButton.textContent = '正在保存…';
-  feedback.textContent = '正在提交咨询，请稍候。';
+  feedback.textContent = '正在保存留言，请稍候。';
   let saved = false;
   try {
     const response = await fetch('api/enquiries', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': csrfToken }, body: JSON.stringify(payload), signal: AbortSignal.timeout(12000) });
@@ -328,7 +330,7 @@ form.addEventListener('submit', async event => {
       throw new Error(data.message || '咨询暂未保存，请稍后再试。');
     }
     if (response.status !== 201 || !/^CJ-\d+$/.test(data.reference || '')) throw new Error('未能确认提交结果，请重新连接后确认再尝试。');
-    feedback.textContent = `咨询已保存 · 编号 ${data.reference}`;
+    feedback.textContent = `留言已保存 · 编号 ${data.reference}`;
     saved = true;
   } catch (error) {
     feedback.classList.add('error');
@@ -338,7 +340,7 @@ form.addEventListener('submit', async event => {
     fields.disabled = enquiryMode === 'unavailable';
     form.removeAttribute('aria-busy');
     submitButton.disabled = saved;
-    submitButton.textContent = saved ? '已提交咨询 ✓' : '提交咨询 →';
+    submitButton.textContent = saved ? '留言已保存 ✓' : '保存留言 →';
     if (firstInvalid) firstInvalid.focus();
     else feedback.scrollIntoView({ block: 'nearest', behavior: 'auto' });
   }
