@@ -2,6 +2,8 @@
 
 BA4043 第 11 组的课程项目。我们为准备探亲送礼的访客设计了一个六幕网站。打开礼盒实拍，访客可以比较箱价与净重，再按广州增城发货和计划揽收日期判断能否赶上送礼。
 
+**[下载 iSpace 提交版 PPT（第 11 组，12 页）](https://github.com/jiang4wqy/ba4043-changjian-lychee/raw/refs/heads/main/BA4043_Group11_Changjian_Lychee_Presentation.pptx)**
+
 **[下载网站与 PPT 演示包（ZIP）](https://github.com/jiang4wqy/ba4043-changjian-lychee/archive/refs/heads/main.zip) · [下载内部讨论用英文 PPT](https://github.com/jiang4wqy/ba4043-changjian-lychee/raw/refs/heads/main/课堂展示.pptx) · [下载研究数据 Excel](https://github.com/jiang4wqy/ba4043-changjian-lychee/raw/refs/heads/main/研究与测试/研究数据总表.xlsx)**
 
 11 月 26 日仓库版新增[含运估价](网页/index.html#gift-estimator)。下载并解压整个 ZIP，打开[项目导览](从这里开始.html)，即可边看 PPT 边试算。11 月 25 日的部署与验收记录对应[公开课程网站](https://changjian.86.53.181.46.sslip.io/)，[当日 PPT](版本档案/课堂展示-11月25日.pptx)另行存档。
