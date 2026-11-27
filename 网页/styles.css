@@ -86,7 +86,7 @@ figcaption { color: var(--muted); font-size: 12px; margin-top: 10px; }
 .info-list dt { color: var(--muted); }
 .info-list dd { margin: 0; }
 .source-note { color: var(--muted); font-size: 12px; line-height: 1.9; }
-.gift-layout { grid-template-columns: 1.15fr 1fr; align-items: start; }
+.gift-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: start; }
 .gallery-stage { position: relative; height: 480px; overflow: hidden; background: #dbe5cf; border: 1px solid var(--line); }
 .gallery-slide { height: 100%; }
 .gallery-slide img, .gallery-slice img { width: 100%; height: 100%; object-fit: contain; }
@@ -102,8 +102,9 @@ figcaption { color: var(--muted); font-size: 12px; margin-top: 10px; }
 .gallery-thumbs img { width: 42px; height: 52px; object-fit: cover; }
 .gallery-thumbs [aria-pressed="true"] { border-color: var(--green); background: var(--sage); box-shadow: inset 0 0 0 1px var(--green); }
 .gift-copy { padding-top: 8px; }
+.gift-spec-heading { font-size: clamp(26px, 3vw, 38px); line-height: 1.35; }
+.gift-purchase-actions { margin-top: 18px; }
 .gift-occasions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 20px; color: var(--red); font: 14px/1.8 var(--serif); }
-.gift-copy .button { margin-top: 25px; }
 .orchard-section { background: #dbe5cf88; }
 .orchard-photo img { width: 100%; height: 380px; object-fit: cover; object-position: center 55%; outline: 1px solid var(--line); outline-offset: 8px; }
 .orchard-story { display: grid; grid-template-columns: 1.4fr .65fr 1fr; align-items: start; gap: 6%; margin-top: 42px; }
@@ -158,8 +159,9 @@ figcaption { color: var(--muted); font-size: 12px; margin-top: 10px; }
   .chapter-mode .faq-intro { position: sticky; top: 24px; align-self: start; }
 }
 .enquiry-section { background: var(--sage); }
-.enquiry-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 8%; align-items: start; }
-.enquiry-copy > p:not(.eyebrow) { margin-top: 14px; color: var(--muted); }
+.enquiry-layout { display: grid; gap: 24px; }
+.merchant-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 28px 8%; align-items: start; margin-top: 18px; }
+.merchant-channels > p { color: var(--muted); }
 .contact-phone { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 12px; min-height: 48px; margin-top: 14px; font: 26px/1.5 var(--serif); }
 .contact-phone .small-label { font: 12px/1.9 "Microsoft YaHei", "PingFang SC", sans-serif; }
 .contact-phone:hover { color: var(--red); }
@@ -167,6 +169,14 @@ figcaption { color: var(--muted); font-size: 12px; margin-top: 10px; }
 .contact-wechat a { display: block; background: #fff; border: 1px solid var(--line); }
 .contact-wechat img { width: 100%; height: auto; }
 .contact-wechat figcaption { margin-top: 8px; font-size: 12px; }
+.order-contact-summary { display: grid; justify-items: start; gap: 8px; padding-top: 10px; border-top: 1px solid var(--line); }
+.order-contact-summary h4 { font-size: 22px; line-height: 1.5; }
+.order-contact-summary p { color: var(--muted); font-size: 14px; }
+.order-contact-summary textarea { min-height: 6.5rem; }
+.order-contact-summary .purchase-feedback { color: var(--green); }
+.course-enquiry { width: min(100%, 45rem); border-block: 1px solid var(--line); }
+.course-enquiry summary { width: fit-content; min-height: 44px; padding: 8px 0; cursor: pointer; }
+.course-enquiry form { margin-bottom: 12px; }
 form { padding: 30px; border: 1px solid var(--line); background: var(--white); }
 fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -285,7 +295,6 @@ input::placeholder, textarea::placeholder { color: #6d7972; font-size: 13px; }
   .orchard-story { grid-template-columns: 1fr 1fr; gap: 30px; }
   .company-photo { grid-column: 2; grid-row: 1 / 3; }
   .company-photo img { height: 360px; object-fit: contain; }
-  .enquiry-layout { gap: 5%; }
   form { padding: 22px; }
 }
 @media (max-width: 800px) {
@@ -329,7 +338,7 @@ input::placeholder, textarea::placeholder { color: #6d7972; font-size: 13px; }
   .journey { grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
   .journey li::after { display: none; }
   .journey h3 { font-size: 22px; }
-  .faq-layout, .enquiry-layout { grid-template-columns: 1fr; gap: 30px; }
+  .faq-layout, .merchant-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .contact-phone { font-size: 24px; }
   .form-grid { gap: 20px; }
   .intro-brand { top: 33px; left: 30px; font-size: 16px; }
@@ -407,7 +416,6 @@ input::placeholder, textarea::placeholder { color: #6d7972; font-size: 13px; }
 .chapter-mode .gift-copy > p:not(.eyebrow) { margin-top: 14px; }
 .chapter-mode .gift-copy .info-list { margin-top: 18px; }
 .chapter-mode .gift-copy .info-list div { padding-block: 10px; }
-.chapter-mode .gift-copy .button { margin-top: 18px; }
 .chapter-mode .orchard-photo img { height: 250px; }
 .chapter-mode .orchard-story { margin-top: 25px; }
 .chapter-mode .company-photo img { height: 155px; }
@@ -495,7 +503,8 @@ input::placeholder, textarea::placeholder { color: #6d7972; font-size: 13px; }
 .estimate-layout form { display: flex; flex-direction: column; gap: 16px; align-self: start; }
 .estimate-layout label { margin-bottom: 5px; font-weight: 600; }
 .estimate-numbers { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-.estimate-actions { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; }
+.estimate-actions, .gift-purchase-actions, .estimate-next, .purchase-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.gift-purchase-actions .button, .estimate-next .button, .purchase-actions .button, .order-contact-summary .button { max-width: 100%; padding-inline: 16px; text-align: center; }
 .estimate-output { background: #e0e8d7; scroll-margin-block: 12px; }
 .estimate-output h4 { font-size: 23px; line-height: 1.5; }
 .estimate-total { color: var(--green); font: 500 clamp(35px,4vw,48px)/1.2 Georgia,var(--serif); letter-spacing: -.04em; overflow-wrap: anywhere; }
@@ -506,6 +515,14 @@ input::placeholder, textarea::placeholder { color: #6d7972; font-size: 13px; }
 .estimate-costs dd { margin: 0; font-variant-numeric: tabular-nums; }
 .estimate-costs .estimate-subtotal { font-weight: 600; }
 #estimate-weights { margin-top: 8px; }
+.estimate-next { margin-top: 16px; }
+.order-preview { max-width: 45rem; margin-top: 20px; padding: 16px 20px; border: 1px solid var(--line); background: var(--white); scroll-margin-block: 12px; }
+.order-preview h4 { font-size: 23px; line-height: 1.5; }
+.order-preview > p { max-width: 62ch; margin-top: 4px; color: var(--muted); }
+.order-facts { max-width: 42rem; margin: 12px 0 16px; border-bottom: 1px solid var(--line); font-size: 14px; }
+.order-facts > div { display: grid; grid-template-columns: minmax(5em, .42fr) minmax(0, 1fr); gap: 8px 16px; padding-block: 6px; border-top: 1px solid var(--line); }
+.order-facts dt { color: var(--muted); }
+.order-facts dd { margin: 0; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 .estimate-source { margin-top: 12px; border-block: 1px solid var(--line); font-size: 14px; }
 .estimate-source summary { width: fit-content; min-height: 44px; padding: 8px 0; cursor: pointer; }
 .estimate-source p { max-width: 66em; padding: 0 0 8px; }
@@ -517,5 +534,4 @@ input::placeholder, textarea::placeholder { color: #6d7972; font-size: 13px; }
   .estimate-intro p:last-child { font-size: 14px; }
   .estimate-output { padding: 16px 18px; }
   .estimate-numbers { gap: 12px; }
-  .estimate-actions { gap: 10px 15px; }
 }
